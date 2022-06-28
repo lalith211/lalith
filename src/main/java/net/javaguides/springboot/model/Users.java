@@ -12,19 +12,19 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="posts")
-public class Emp {
+@Table(name="users")
+public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column(name ="userID")
-	private String userId;
-	@Column(name ="title")
-	private String title;
-	@Column(name ="body")
-	private String body;
-	
-	
+	@Column(name="name")
+	private long name;
+	@Column(name="username")
+	private long username;
+	@Column(name="email")
+	private long email;
+	@Column(name="address")
+	private long address;
 
 }
