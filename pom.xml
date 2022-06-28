@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.javaguides</groupId>
-	<artifactId>springboot-backend-3</artifactId>
+	<artifactId>springboot-backend-4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-backend-3</name>
+	<name>springboot-backend-4</name>
 	<description>springboot restfull web services</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
