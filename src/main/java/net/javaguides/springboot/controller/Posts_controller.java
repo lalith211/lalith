@@ -17,39 +17,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.javaguides.springboot.entity.Company;
-import net.javaguides.springboot.repository.CompanyRepository;
+import net.javaguides.springboot.entity.Posts;
+import net.javaguides.springboot.repository.Posts_Repository;
 
 @RestController
-public class CompanyController {
+public class Posts_controller {
 	
 	
 	@Autowired
-	private CompanyRepository repo;
-
-	/*@GetMapping("/wallcome")
-	public String welcome()
-	{
-		return "<html><body>"
-			+ "<h1>WELCOME</h1>"
-			+ "</body></html>";
-	}*/
+	private static Posts_Repository repo;
 	
 	@GetMapping("/posts")
-	public List<Company> getAllNotes()
+	public static List<Posts> getAllNotes()
 	{
 		return repo.findAll();
 	}
 	
 	@GetMapping("/com/{id}")
-	public Optional<Company> getCompanybyId(@PathVariable(value = "id") int id) {
+	public Optional<Posts> getCompanybyId(@PathVariable(value = "id") int id) {
 		
 		return repo.findById(id);
 	}
 	
 	@PostMapping("/posts")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Company addCompany(@RequestBody Company posts) {
+	public Posts addCompany(@RequestBody Posts posts) {
 		System.out.println("hello");
 		return repo.save(posts);
 		
@@ -64,11 +56,11 @@ public class CompanyController {
 	
 	@PutMapping("/add/{id}")
     public ResponseEntity<Object> updateStudent(
-            @RequestBody Company posts,
+            @RequestBody Posts posts,
             @PathVariable int id)
         {
       
-            Optional<Optional<Company>> postsRepo
+            Optional<Optional<Posts>> postsRepo
                 = Optional.ofNullable(repo.findById(id));
       
             if (!postsRepo.isPresent())

@@ -6,11 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import net.javaguides.springboot.entity.Company;
+import net.javaguides.springboot.entity.Posts;
 
 @Repository
-public interface CompanyRepository
-extends JpaRepository<Company,
+public interface Posts_Repository
+extends JpaRepository<Posts,
 Integer>{
 	
 

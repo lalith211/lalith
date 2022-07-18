@@ -11,7 +11,7 @@ import org.hibernate.annotations.Comment;
 
 @Entity
 @Table(name ="posts")
-public class Company {
+public class Posts {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
@@ -23,11 +23,11 @@ public class Company {
 	@Column(name ="userid")
 	String userid;
 	
-	public Company() {
+	public Posts() {
 		
 	}
 
-	public Company(int id, String body, String title, String userid) {
+	public Posts(int id, String body, String title, String userid) {
 		super();
 		this.body = body;
 		this.title = title;
