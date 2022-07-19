@@ -9,11 +9,13 @@ import java.util.List;
 
 import org.apache.tomcat.jni.User;
 import org.assertj.core.api.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.client.ExpectedCount;
 
 import net.javaguides.springboot.controller.Posts_controller;
 import net.javaguides.springboot.entity.Posts;
@@ -31,13 +33,16 @@ public class Usertest {
 	@Test
 	public void postsgetalltest() {
 		
-		/*Posts post1= new Posts(1,"sunt aut1","quia et1","1");
-		Posts post2= new Posts(2,"sunt aut2","quia et2","2");
-		*/
+		Posts_controller post1= new Posts_controller();
+		post1.addCompany("1",1,"sunt aut1","quia et1");
+		Assertions.assertFalse(post1.getAllNotes().isEmpty());
+		Assertions.assertEquals(1,post1.getAllNotes().size());
 		
-		Mockito.when(Posts_controller.getAllNotes()).thenReturn(List<Posts>);
+		
+		
+		/*Mockito.when(Posts_controller.getAllNotes()).thenReturn(List<Posts>);
 		List<Posts> postl=new ArrayList<>();
-		Assert.assertEquals(List<Posts>,post1);
+		Assert.assertEquals(List<Posts>,post1);*/
 		
 	}
 	
