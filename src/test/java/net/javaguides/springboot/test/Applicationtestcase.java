@@ -30,11 +30,27 @@ import net.javaguides.springboot.repository.Posts_Repository;
 public class Applicationtestcase {
 	
 	@Mock
+	public Posts_Repository posts_Repository;
+	@Mock
 	public Posts_controller posts_controller;
 	
 	@Autowired
 	public Posts posts;
 	
+	@Test
+	public void getusertest() {
+		 
+
+String[] array={"1","sunt aut1","quia et1"}; 
+List<String> list=new ArrayList<String>();  
+for(String lang:array){  
+list.add(lang);  
+} 
+		
+		when(Posts_controller.getAllNotes()).thenReturn(list);
+assertEquals(1,Posts_controller.listall().size());
+		
+	}	
   /*  @Test
     public void add()
     {
@@ -59,25 +75,6 @@ public class Applicationtestcase {
         posts_controller.addCompany(post); 
         verify(posts_controller, times(1)).addCompany(post);
     }
-
-    
-	
-    
-    
-	@Test
-	public void getusertest() {
-		 
-
-String[] array={"1","sunt aut1","quia et1"}; 
-List<String> list=new ArrayList<String>();  
-for(String lang:array){  
-list.add(lang);  
-} 
-		
-		when(Posts_controller.getAllNotes()).thenReturn(list);
-		assertEquals(1,Posts_controller.getAllNotes().size());
-		
-	}
 	
 	
 
